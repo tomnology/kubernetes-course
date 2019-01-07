@@ -5,7 +5,7 @@ pipeline {
       serviceAccount 'jenkins-helm'
       containerTemplate {
         name 'helm-pod'
-        image 'wardviaene/helm-s3'
+        image 'tomnology/helm-s3'
         ttyEnabled true
         command 'cat'
       }
@@ -15,7 +15,7 @@ pipeline {
     stage('Run helm') {
       steps {
         container('helm-pod') {
-          git url: 'git://github.com/wardviaene/kubernetes-course.git', branch: 'master'
+          git url: 'git://github.com/tomnology/kubernetes-course.git', branch: 'master'
           sh '''
           HELM_BUCKET=helm-rytcufor
           PACKAGE=demo-chart
