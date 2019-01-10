@@ -20,7 +20,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - node-demo-app.newtech.academy
+    - node-demo-app.inno-on.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -59,4 +59,3 @@ mariadb:
       enabled: true
       accessMode: ReadWriteOnce
       size: 8Gi
-
